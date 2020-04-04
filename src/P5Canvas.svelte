@@ -10,17 +10,9 @@
 	  let myp5 = new p5(sketch, id);
 	});
 
-	const car = {
-	  model: "Fiesta",
-	  manufacturer: "Ford",
-	  fullName: function() {
-	    return `${this.manufacturer} ${this.model}`;
-	  }
-	};
-
-	$: fullName = car.fullName();
 </script>
 
 <style>
+	div { margin: auto; width: 50%; }
 </style>
 <div {id}></div>

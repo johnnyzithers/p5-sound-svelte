@@ -27,10 +27,10 @@
 		};
 
 		p5.setup = () => {
-			p5.createCanvas(800, 500);
+			p5.createCanvas(window.innerWidth- 20, 500);
 			p5.frameRate(30);					// FIXME
 			w = p5.width + 16;
-
+			
 			for (let i = 0; i < numwaves; i++)
 			{
 				amplitude[i] = p5.random(10,30);
@@ -92,7 +92,12 @@
 
 <style>
   
-  main { font-family: sans-serif; background-color: #00000F; }
+  main { font-family: sans-serif; background-color: #00000F; 
+  	margin: auto;
+  	width: 50%;
+  	padding: 5em;
+  }
+
   div { color: #d3d3ff; }
 
 </style>
@@ -100,6 +105,8 @@
 <main>
 	<div>
 		<h1>Landing Page</h1>
+		  <P5Canvas sketch={sketch}/>
+
 	</div>
 	
 	<!-- https://musopen.org/music/43683-requiem-in-d-minor-k-626/ -->
@@ -109,7 +116,6 @@
 		composer="Wolfgang Amadeus Mozart"
 		performer="Markus Staab"
 	/>
-  <P5Canvas sketch={sketch}/>
 </main>
 
 
