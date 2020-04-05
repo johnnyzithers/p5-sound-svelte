@@ -15,4 +15,4 @@
 <style>
 	div { margin: auto; width: 50%; }
 </style>
-<div {id}></div>
+<div {id} ></div>

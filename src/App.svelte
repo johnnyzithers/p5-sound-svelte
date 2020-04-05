@@ -6,10 +6,11 @@
 
 	let sketch = function(p5) {
 
+
 		let xspacing = 10;	// space between samples
 		let w;				// width
 		let numwaves = 10;
-
+		let barwidth = 8;
 		let theta = 0.0;
 		let amplitude;
 		let dx;
@@ -27,14 +28,17 @@
 		};
 
 		p5.setup = () => {
-			p5.createCanvas(window.innerWidth- 20, 500);
-			p5.frameRate(30);					// FIXME
+			let pnv = p5.createCanvas(window.innerWidth- 20, 500);
+			
+
+
+			p5.frameRate(60);					// FIXME
 			w = p5.width + 16;
 			
 			for (let i = 0; i < numwaves; i++)
 			{
-				amplitude[i] = p5.random(10,30);
-				let period = p5.random(100, 110);	// FIXME
+				amplitude[i] = p5.random(10,20);
+				let period = p5.random(80, 400);	// FIXME
 				dx[i] = (p5.TWO_PI / period) * xspacing;
 			}
 
@@ -72,13 +76,11 @@
 		  p5.background(0,122,122);
 		  p5.calcWave();
 
-		  // p5.noStroke();
-		  // p5.fill(255, 50);
-		  // p5.ellipseMode(CENTER);
-		  // p5.rect(10,10,10,10);
+
+		  p5.noStroke();
 		  for (let x = 0; x < yvalues.length; x++) {
-		    // p5.rect(x * xspacing, 100, 16, 16);
-		    p5.rect(x * xspacing, p5.height / 2 + yvalues[x], 5, 5);
+		    let thisy = p5.height / 2 + yvalues[x];
+		    p5.rect(x * xspacing, thisy, barwidth, p5.height - thisy);
 		  }
 		};
 
@@ -92,20 +94,19 @@
 
 <style>
   
-  main { font-family: sans-serif; background-color: #00000F; 
+  div { 
+  	color: #d3d3ff;
+  	font-family: sans-serif; 
   	margin: auto;
   	width: 50%;
   	padding: 5em;
   }
 
-  div { color: #d3d3ff; }
 
 </style>
-
 <main>
 	<div>
 		<h1>Landing Page</h1>
-		  <P5Canvas sketch={sketch}/>
 
 	</div>
 	
@@ -116,6 +117,12 @@
 		composer="Wolfgang Amadeus Mozart"
 		performer="Markus Staab"
 	/>
+
+
+
+	<P5Canvas sketch={sketch}/>
+
+
 </main>
 
 

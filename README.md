@@ -3,14 +3,14 @@
 This is a [p5.js](https://p5js.org/) + [Svelte](https://svelte.technology) landing page project template.
 
 
-###Install the dependencies:
+##Install the dependencies:
 
 ```bash
 cd svelte-app
 npm install
 ```
 
-###Start Development Server:
+##Start Development Server:
 
 ```bash
 npm run dev
